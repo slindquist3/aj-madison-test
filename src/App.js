@@ -1,10 +1,13 @@
 import React from 'react';
 import styles from './App.module.scss';
+import Header from './components/Header';
+import Selection from './components/Selection';
 
-function App() {
+const App = () => {
   return (
     <div className={styles.app}>
-      begin
+      <Header />
+      <Selection />
     </div>
   );
 }
