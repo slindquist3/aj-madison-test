@@ -2,8 +2,7 @@ import React from 'react';
 import styles from './ProductGrid.module.scss';
 import Product from './Product';
 
-const ProductGrid = ({ products }) => {
-  return (
+const ProductGrid = ({ products }) => (
     <div className={styles.container}>
         {products.map( product => (
             <Product 
@@ -14,6 +13,5 @@ const ProductGrid = ({ products }) => {
         ) )}
     </div>
   );
-}
 
 export default ProductGrid;
