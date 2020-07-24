@@ -24,12 +24,13 @@ export default class App extends Component {
     if ( this.state.products.length ) {
       console.log( this.state.products );
     }
+    // add loading icon for when length of products is zero
 
     return (
       <div className={styles.app}>
         <Header />
         <Selection />
-        <ProductGrid />
+        <ProductGrid products={this.state.products} />
       </div>
     );
 
