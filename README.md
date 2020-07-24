@@ -5,13 +5,13 @@
 
 I started this project by identifying the major components on the page, which I determined bto be the Header section with text, the Selection controls, and then the ProductList, populated with Products.
 
-I wanted to keep components as dumb as possible, so I make the call to the API at the top level and then pass down the product array as a prop after capturing it in state. Another way to do this would have been to use the UseEffect hook in ProductList to make the call, but because I planned to later add methods connected to the Selection components that would modify the product array, I decided to centralize state at the App level, where I would later plan to add the methods that would modify that top level array based on the user's selections.
+I wanted to keep components as dumb as possible, so I make the call to the API at the top level and then pass down the product array as a prop after capturing it in state. Another way to do this would have been to use the UseEffect hook in ProductList to make the call, but because I planned to later add methods connected to the Selection components that would modify the product array, I decided to centralize state at the App level.
 
 I prioritzed mimicking the desktop mock up, and then planned to tweak the Selection component to respond to mobile viewports. I would use media queries to change the Selection component to a single button that on click could mount a modal for filtering a sorting when on tablet or a phone.
 
 ## Libraries
 
-Originally I chose to use the node-sass package out of habit, but because I adoped the css module pattern, I found that I didn't need to rely on nesting or other features Sass provides, so I removed the node-sass package.
+Originally I chose to use the node-sass package out of habit, but because I adopted the css module pattern, I found that I didn't need to rely on nesting or other features Sass provides, so I removed the node-sass package.
 
 With more time for this challenge, I would have added unit tests with the Jest library.
 
