@@ -1,7 +1,5 @@
 import React from 'react';
-import styles from './Selection.module.scss';
-
-// children components go above
+import styles from './Selection.module.css';
 
 const ApplianceSelect = () => (
     <span className={styles["selection-container"]}>
@@ -18,10 +16,10 @@ const ApplianceSelect = () => (
     </span>
 );
 
-const SortBy = () => (
+const SortBy = ({ handleSort }) => (
   <span className={styles["selection-container"]}>
      <label className={styles["selection-label"]}>Sort By:</label>
-        <select>
+        <select onChange={handleSort}>
             <option value="highest">Highest Price</option>
             <option value="lowest">Lowest Price</option>
         </select> 
@@ -36,15 +34,15 @@ const DeliveryMethod = () => (
   </span>
 )
 
-const Selection = () => (
+const Selection = ({
+  handleSort
+}) => (
     <div className={styles.container}>
-
       <div className={styles.controls}>
         <ApplianceSelect />
-        <SortBy />
+        <SortBy handleSort={handleSort} />
         <DeliveryMethod />
       </div>
-
       <button className={styles["clear-all"]}>Clear All</button>
     </div>
 );

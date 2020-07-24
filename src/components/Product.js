@@ -1,6 +1,5 @@
 import React from 'react';
-import styles from './Product.module.scss';
-
+import styles from './Product.module.css';
 
 const Product = ({
     brand,
@@ -10,7 +9,8 @@ const Product = ({
     listPrice,
     quickShip,
     series,
-    src
+    src,
+    url
 }) => (
     <div className={styles.container}>
         <img className={styles.image} src={src} alt={brand} />
@@ -20,7 +20,14 @@ const Product = ({
         <p className={styles["list-price-container"]}>
             <span className={styles.discount}>Save ${discount} </span><span className={styles["list-price"]}>${listPrice}</span>
         </p>
-        <button className={styles["view-package"]}>View Package</button>
+        <div className={styles["view-package"]}>
+            <a 
+                className={styles["view-package-link"]} 
+                href={`https://ajmadison.com/${url}`} 
+                target="_blank" 
+                rel="noopener noreferrer">View Package
+            </a>
+        </div>
     </div>
 );
 
