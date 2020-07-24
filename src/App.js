@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import styles from './App.module.scss';
 import Header from './components/Header';
 import Selection from './components/Selection';
-import ProductGrid from './components/ProductGrid';
+import ProductList from './components/ProductList';
 
 export default class App extends Component {
 
   constructor(props) {
     super(props);
+  
     this.state = {
       products: []
     };
@@ -18,6 +19,8 @@ export default class App extends Component {
       .then(res => res.json())
       .then(res => this.setState({ products: res }))
   }
+
+  // change state with Selection form component
 
   render() {
 
@@ -30,7 +33,7 @@ export default class App extends Component {
       <div className={styles.app}>
         <Header />
         <Selection />
-        <ProductGrid products={this.state.products} />
+        <ProductList products={this.state.products} />
       </div>
     );
 

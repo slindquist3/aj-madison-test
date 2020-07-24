@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Selection.module.scss';
 
+// children components go above
+
 const Selection = () => {
   return (
     <div className={styles.container}>
