@@ -3,10 +3,9 @@ import styles from './Selection.module.scss';
 
 // children components go above
 
-const Selection = () => {
-  return (
-    <div className={styles.container}>
-        <label>Select Appliance</label>
+const ApplianceSelect = () => (
+    <span className={styles["selection-container"]}>
+       <label className={styles["selection-label"]}>Select Appliances:</label>
         <select>
             <option value="cooktop">Cooktop</option>
             <option value="dishwasher">Dishwasher</option>
@@ -16,20 +15,38 @@ const Selection = () => {
             <option value="refrigerator">Refrigerator</option>
             <option value="wall oven">Wall Oven</option>
         </select> 
+    </span>
+);
 
-        <label>Sort By </label>
+const SortBy = () => (
+  <span className={styles["selection-container"]}>
+     <label className={styles["selection-label"]}>Sort By:</label>
         <select>
             <option value="highest">Highest Price</option>
             <option value="lowest">Lowest Price</option>
         </select> 
+  </span>
+);
 
-        <label>Delivery Method</label>
-        <input type="checkbox" value="quick ship"></input>
-        <label htmlFor="quick ship">Quick Ship</label>
+const DeliveryMethod = () => (
+  <span className={styles["selection-container"]}>
+    <label className={styles["selection-label"]}>Delivery Method:</label>
+    <input type="checkbox" value="quick ship"></input>
+    <label className={styles["selection-label"]} htmlFor="quick ship"> Quick Ship</label>
+  </span>
+)
 
-        <button>Clear All</button>
+const Selection = () => (
+    <div className={styles.container}>
+
+      <div className={styles.controls}>
+        <ApplianceSelect />
+        <SortBy />
+        <DeliveryMethod />
+      </div>
+
+      <button className={styles["clear-all"]}>Clear All</button>
     </div>
-  );
-}
+);
 
 export default Selection;
